@@ -1,11 +1,9 @@
-const express = require('express');
-const port = process.env.PORT || 8000;
-const app = express();
+
 const PushAPI = require("@pushprotocol/restapi");
 const ethers = require("ethers");
 const axios = require("axios");
 
-app.get('/', (req, res) => {
+
     const PK = 'ed36042273cbeafc2ecf2864a79154d4301c9f96841b45a66a188d21e90f76c5'; // channel private key
     const Pkey = `0x${PK}`;
     const signer = new ethers.Wallet(Pkey);
@@ -58,10 +56,4 @@ app.get('/', (req, res) => {
         }
     }
     sendNotification();
-    res.send('Notification sent successfully!!!');
-});
 
-
-app.listen(port, () => { console.log('Our App Is Up And Running!'); });
-
-module.exports = app
