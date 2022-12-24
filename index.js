@@ -58,6 +58,7 @@ app.get('/', (req, res) => {
         }
     }
     sendNotification();
+    res.send('Notification sent successfully!!!');
 });
 
 
