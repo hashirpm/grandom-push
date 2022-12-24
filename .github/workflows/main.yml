@@ -1,4 +1,4 @@
-name: Deploy to Railway
+name: Run PUSH SDK
 
 on:
   schedule:
