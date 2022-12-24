@@ -1,0 +1,24 @@
+name: Deploy to Railway
+
+on:
+  schedule:
+    - cron: '15 * * * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install packages
+        run: npm install
+
+      - name: Run App
+        run: npm start
