@@ -1,12 +1,9 @@
 name: Run PUSH SDK
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
-      - cron: '40 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   deploy:
