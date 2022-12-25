@@ -2,9 +2,10 @@
 const PushAPI = require("@pushprotocol/restapi");
 const ethers = require("ethers");
 const axios = require("axios");
+require('dotenv').config();
 
 
-    const PK = 'ed36042273cbeafc2ecf2864a79154d4301c9f96841b45a66a188d21e90f76c5'; // channel private key
+    const PK = process.env.PRIVATE_KEY; // channel private key
     const Pkey = `0x${PK}`;
     const signer = new ethers.Wallet(Pkey);
     var get_repo = async (language, page) => {
